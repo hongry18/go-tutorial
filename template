@@ -1,0 +1,21 @@
+package main
+
+import (
+	"fmt"
+	"runtime"
+)
+
+func runFuncName() {
+	pc := make([]uintptr, 1)
+	runtime.Callers(2, pc)
+	f := runtime.FuncForPC(pc[0])
+	fmt.Printf("\n### %s\n\n", f.Name())
+}
+
+func ex01() {
+    runFuncName()
+}
+
+func main() {
+	ex01()
+}
