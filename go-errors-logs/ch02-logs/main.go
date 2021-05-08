@@ -47,11 +47,22 @@ func ex06() {
 	zlog.Print("Hey!! I'a log message")
 }
 
+func ex07() {
+	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
+
+	zlog.Debug().Int("EmployeeId", 1001).Msg("Getting employee information")
+
+	zlog.Debug().Str("Name", "John").Send()
+
+
+}
+
 func main() {
-	ex01()
+	// ex01()
 	// ex02()
 	// ex03()
 	// ex04()
-	ex05()
-	ex06()
+	// ex05()
+	// ex06()
+	ex07()
 }
