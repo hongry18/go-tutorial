@@ -85,7 +85,7 @@ func TestStatement(t *testing.T) {
 	}
 
 	account.Deposit(100)
-	statement := account.Statement(account)
+	statement := account.Statement()
 	if statement != "1001 - John - 100" {
 		t.Error("statement doesn't have the proper format")
 	}
